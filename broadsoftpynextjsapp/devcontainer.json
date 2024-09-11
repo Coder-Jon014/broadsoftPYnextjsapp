@@ -1,8 +1,0 @@
-{
-    "name": "super meme",
-    // ... other configurations ...
-    "features": {
-      "ghcr.io/devcontainers/features/github-cli:1": {}
-    }
-  }
-  
