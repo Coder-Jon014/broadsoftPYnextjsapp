@@ -1,7 +1,0 @@
-{
-  "name": "super meme",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {}
-  }
-}
