@@ -62,7 +62,7 @@ def get_user_login_info():
 
     # Run the command
     user_id = request.args.get('user_id')
-    response = api.command("UserLoginInfoGetRequest", user_id=user_id)
+    response = api.command("UserGetLoginInfoRequest", user_id=user_id)
 
     # Return the response as JSON
     return jsonify({
