@@ -11,21 +11,36 @@ api = BroadworksAPI(
 #print(response)
 
 response = api.command('UserGetLoginInfoRequest', user_id="Oberlin_High_2101")
-print(response)
-
-# python test_broadsoft_api.py
-# UserGetLoginInfoResponse(session_id='8625bd77-f2ed-408a-89f4-3f59a7ee858c', login_type='User', locale='en_US', encoding='ISO-8859-1', group_id='JAM_Oberlin_High_School', service_provider_id='JAM_HPBX', is_enterprise=False, password_expires_days=-2147483648, last_name='James', first_name='Yvonne', user_id='Oberlin_High_2101@voip.digicelgroup.com', phone_number=None)
+# print(response)
 
 
 ## Print each attribute, avoiding NoneType issues
-#print("Response attributes:")
-#for attr in dir(response):
-#    if not attr.startswith('_') and not callable(getattr(response, attr)):
-#        value = getattr(response, attr)
-#        if value is not None:
-#            print(f"{attr}: {value}")
-#        else:
-#            print(f"{attr}: None")
+print("Response attributes:")
+for attr in dir(response):
+   if not attr.startswith('_') and not callable(getattr(response, attr)):
+       value = getattr(response, attr)
+       if value is not None:
+           print(f"{attr}: {value}")
+       else:
+           print(f"{attr}: None")
+
+
+# [root@coe-voip Broadsoft]# python test_broadsoft_api.py
+# Response attributes:
+# encoding: ISO-8859-1
+# first_name: Yvonne
+# group_id: JAM_Oberlin_High_School
+# is_enterprise: False
+# last_name: James
+# locale: en_US
+# login_type: User
+# password_expires_days: -2147483648
+# phone_number: None
+# service_provider_id: JAM_HPBX
+# session_id: 1542c89a-f0ce-46a9-8e7b-375f30eb85d8
+# type_: UserGetLoginInfoResponse
+# user_id: Oberlin_High_2101@voip.digicelgroup.com
+
 
 ###UserFeatureAccessCodeGetListRequest
 #Feature Access Codes
