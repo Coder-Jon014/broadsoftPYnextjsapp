@@ -1,11 +1,17 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CallLogs from '@/components/CallLogs';
 
 export default function Home() {
   const [userId, setUserId] = useState('');
   const [selectedFunction, setSelectedFunction] = useState('UserBasicCallLogsGetListRequest');
   const [result, setResult] = useState<any>(null);
+
+  // Reset result and userId when function changes
+  useEffect(() => {
+    setResult(null);
+    setUserId('');
+  }, [selectedFunction]);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
