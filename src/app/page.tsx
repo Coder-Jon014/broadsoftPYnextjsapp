@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import CallLogs from '@/components/CallLogs';
 
 export default function Home() {
   const [userId, setUserId] = useState('');
@@ -26,20 +27,10 @@ export default function Home() {
 
     if (selectedFunction === 'UserBasicCallLogsGetListRequest') {
       return (
-        <div>
-          <h3>Missed Calls</h3>
-          <ul>
-            {result.missed_calls.map((call: any, index: number) => (
-              <li key={index}>{call.name} - {call.phone_number} - {call.time}</li>
-            ))}
-          </ul>
-          <h3>Received Calls</h3>
-          <ul>
-            {result.received_calls.map((call: any, index: number) => (
-              <li key={index}>{call.name} - {call.phone_number} - {call.time}</li>
-            ))}
-          </ul>
-        </div>
+        <CallLogs 
+          missedCalls={result.missed_calls} 
+          receivedCalls={result.received_calls} 
+        />
       );
     } else if (selectedFunction === 'UserGetLoginInfoRequest') {
       return (
