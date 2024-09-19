@@ -47,12 +47,13 @@ def get_user_login_info():
     user_id = request.args.get('user_id')
     response = api.command("UserGetLoginInfoRequest", user_id=user_id)
 
-    # Use the loop to get all attributes dynamically
-    result = {}
-    for attr in dir(response):
-        if not attr.startswith('_') and not callable(getattr(response, attr)):
-            value = getattr(response, attr)
-            result[attr] = value
+    # Filter and rename the desired attributes
+    result = {
+        "User ID": getattr(response, 'user_id', None),
+        "First Name": getattr(response, 'first_name', None),
+        "Last Name": getattr(response, 'last_name', None),
+        "Group ID": getattr(response, 'group_id', None)
+    }
 
     return jsonify(result)
 

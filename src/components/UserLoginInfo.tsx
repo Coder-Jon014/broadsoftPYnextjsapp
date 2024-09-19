@@ -8,12 +8,12 @@ import {
 } from "@/components/ui/table"
 
 interface UserLoginInfoProps {
-  loginInfo: Record<string, any>;
+  loginInfo: Record<string, string | null>;
 }
 
 export default function UserLoginInfo({ loginInfo }: UserLoginInfoProps) {
   return (
-    <div className="container mx-auto max-w-4xl p-4">
+    <>
       <h2 className="text-2xl font-bold mb-4 text-center">User Login Information</h2>
       <Table>
         <TableHeader>
@@ -26,11 +26,11 @@ export default function UserLoginInfo({ loginInfo }: UserLoginInfoProps) {
           {Object.entries(loginInfo).map(([key, value]) => (
             <TableRow key={key}>
               <TableCell className="font-medium">{key}</TableCell>
-              <TableCell>{value !== null ? String(value) : 'None'}</TableCell>
+              <TableCell>{value !== null ? value : 'None'}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
-    </div>
+    </>
   );
 }
