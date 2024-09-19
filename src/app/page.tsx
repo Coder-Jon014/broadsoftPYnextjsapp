@@ -56,7 +56,7 @@ export default function Home() {
   };
 
   return (
-    <div className="container mx-auto max-w-4xl p-4">
+    <div className="container mx-auto max-w-4xl p-4 flex flex-col h-screen">
       <h1 className="text-3xl font-bold mb-6 text-center">API Data Fetcher</h1>
       
       <form onSubmit={handleSubmit} className="mb-8">
@@ -92,7 +92,9 @@ export default function Home() {
         </div>
       </form>
 
-      {renderResult()}
+      <div className="flex-grow overflow-auto">
+        {renderResult()}
+      </div>
     </div>
   );
 }
