@@ -41,7 +41,7 @@ for attr in dir(response):
 # type_: UserGetLoginInfoResponse
 # user_id: Oberlin_High_2101@voip.digicelgroup.com
 
-# UserGetRequest22
+# Function:UserGetRequest22
 # Response attributes:
 # access_device_endpoint: AccessDeviceMultipleIdentityAndContactEndpointRead(access_device={'device_level': 'Group', 'device_name': 'Oberlin_High_2101'}, line_port='Oberlin_High_2101@voip.digicelgroup.com', private_identity=None, contact=[], static_registration_capable=False, use_domain=True, port_number=None, support_visual_device_management=False)
 # address: None

@@ -57,5 +57,27 @@ def get_user_login_info():
 
     return jsonify(result)
 
+@app.route('/user-get')
+def get_user_details():
+    user_id = request.args.get('user_id')
+    response = api.command("UserGetRequest22", user_id=user_id)
+
+    # Filter and rename the desired attributes
+    result = {
+        "User ID": getattr(response, 'user_id', None),
+        "First Name": getattr(response, 'first_name', None),
+        "Last Name": getattr(response, 'last_name', None),
+        "Group ID": getattr(response, 'group_id', None),
+        "Extension": getattr(response, 'extension', None),
+        "Calling Line ID Phone Number": getattr(response, 'calling_line_id_phone_number', None),
+        "Time Zone": getattr(response, 'time_zone', None),
+        "Time Zone Display Name": getattr(response, 'time_zone_display_name', None),
+        "Language": getattr(response, 'language', None),
+        "Network Class of Service": getattr(response, 'network_class_of_service', None),
+        "Service Provider ID": getattr(response, 'service_provider_id', None)
+    }
+
+    return jsonify(result)
+
 if __name__ == '__main__':
     app.run(debug=True)

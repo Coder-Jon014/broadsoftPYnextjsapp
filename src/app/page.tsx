@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import CallLogs from '@/components/CallLogs';
 import UserLoginInfo from '@/components/UserLoginInfo';
+import UserGetInfo from '@/components/UserGetInfo';
 
 export default function Home() {
   const [userId, setUserId] = useState('');
@@ -21,6 +22,8 @@ export default function Home() {
       apiUrl = `/api/call-logs?function=${selectedFunction}&user_id=${userId}`;
     } else if (selectedFunction === 'UserGetLoginInfoRequest') {
       apiUrl = `/api/user-login-info?function=${selectedFunction}&user_id=${userId}`;
+    } else if (selectedFunction === 'UserGetRequest22') {
+      apiUrl = `/api/user-get?function=${selectedFunction}&user_id=${userId}`;
     }
 
     try {
@@ -52,6 +55,8 @@ export default function Home() {
       );
     } else if (selectedFunction === 'UserGetLoginInfoRequest') {
       return <UserLoginInfo loginInfo={result} />;
+    } else if (selectedFunction === 'UserGetRequest22') {
+      return <UserGetInfo userInfo={result} />;
     }
 
     return null;
@@ -73,6 +78,7 @@ export default function Home() {
             >
               <option value="UserBasicCallLogsGetListRequest">Call Logs</option>
               <option value="UserGetLoginInfoRequest">User Login Info</option>
+              <option value="UserGetRequest22">User Details</option>
             </select>
           </div>
 
