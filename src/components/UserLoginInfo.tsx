@@ -8,7 +8,12 @@ import {
 } from "@/components/ui/table"
 
 interface UserLoginInfoProps {
-  loginInfo: Record<string, string | null>;
+  loginInfo: {
+    "User ID": string | null;
+    "First Name": string | null;
+    "Last Name": string | null;
+    "Group ID": string | null;
+  };
 }
 
 export default function UserLoginInfo({ loginInfo }: UserLoginInfoProps) {
@@ -18,17 +23,19 @@ export default function UserLoginInfo({ loginInfo }: UserLoginInfoProps) {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Attribute</TableHead>
-            <TableHead>Value</TableHead>
+            <TableHead>User ID</TableHead>
+            <TableHead>First Name</TableHead>
+            <TableHead>Last Name</TableHead>
+            <TableHead>Group ID</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
-          {Object.entries(loginInfo).map(([key, value]) => (
-            <TableRow key={key}>
-              <TableCell className="font-medium">{key}</TableCell>
-              <TableCell>{value !== null ? value : 'None'}</TableCell>
-            </TableRow>
-          ))}
+          <TableRow>
+            <TableCell>{loginInfo["User ID"] || 'None'}</TableCell>
+            <TableCell>{loginInfo["First Name"] || 'None'}</TableCell>
+            <TableCell>{loginInfo["Last Name"] || 'None'}</TableCell>
+            <TableCell>{loginInfo["Group ID"] || 'None'}</TableCell>
+          </TableRow>
         </TableBody>
       </Table>
     </>
