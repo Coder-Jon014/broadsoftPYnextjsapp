@@ -8,7 +8,7 @@ export default function Home() {
   const [selectedFunction, setSelectedFunction] = useState('UserBasicCallLogsGetListRequest');
   const [result, setResult] = useState<any>(null);
 
-  // Reset only the result when function changes
+  // Reset the result when function changes
   useEffect(() => {
     setResult(null);
   }, [selectedFunction]);
@@ -43,16 +43,18 @@ export default function Home() {
       return <div className="text-red-500">{result.error}</div>;
     }
 
-    if (selectedFunction === 'UserBasicCallLogsGetListRequest') {
+    if (selectedFunction === 'UserBasicCallLogsGetListRequest' && result.missed_calls && result.received_calls) {
       return (
         <CallLogs 
-          missedCalls={result.missed_calls || []} 
-          receivedCalls={result.received_calls || []} 
+          missedCalls={result.missed_calls} 
+          receivedCalls={result.received_calls} 
         />
       );
     } else if (selectedFunction === 'UserGetLoginInfoRequest') {
       return <UserLoginInfo loginInfo={result} />;
     }
+
+    return null;
   };
 
   return (
