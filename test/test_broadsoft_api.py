@@ -41,6 +41,47 @@ for attr in dir(response):
 # type_: UserGetLoginInfoResponse
 # user_id: Oberlin_High_2101@voip.digicelgroup.com
 
+# UserGetRequest22
+# Response attributes:
+# access_device_endpoint: AccessDeviceMultipleIdentityAndContactEndpointRead(access_device={'device_level': 'Group', 'device_name': 'Oberlin_High_2101'}, line_port='Oberlin_High_2101@voip.digicelgroup.com', private_identity=None, contact=[], static_registration_capable=False, use_domain=True, port_number=None, support_visual_device_management=False)
+# address: None
+# address_location: None
+# alias: []
+# alternate_user_id: []
+# calling_line_id_first_name: Yvonne
+# calling_line_id_last_name: James
+# calling_line_id_phone_number: 8766199888
+# country_code: 1
+# default_alias: Oberlin_High_2101@voip.digicelgroup.com
+# department: None
+# department_full_path: None
+# email_address: None
+# extension: 201
+# first_name: Yvonne
+# group_id: JAM_Oberlin_High_School
+# hiragana_first_name: Yvonne
+# hiragana_last_name: James
+# imp_id: None
+# language: English
+# last_name: James
+# mobile_phone_number: None
+# name_dialing_name: NameDialingName(name_dialing_last_name='James', name_dialing_first_name='Yvonne')
+# national_prefix: None
+# network_class_of_service: FraudBlk
+# office_zone_name: None
+# pager_phone_number: None
+# phone_number: None
+# primary_zone_name: None
+# service_provider_id: JAM_HPBX
+# session_id: 1388c2f8-affc-4ea2-ba05-023d15ba81b6
+# time_zone: America/New_York
+# time_zone_display_name: (GMT-04:00) (US) Eastern Time
+# title: None
+# trunk_addressing: None
+# type_: UserGetResponse22
+# user_id: Oberlin_High_2101@voip.digicelgroup.com
+# yahoo_id: None
+
 
 ###UserFeatureAccessCodeGetListRequest
 #Feature Access Codes
