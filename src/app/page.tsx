@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import CallLogs from '@/components/CallLogs';
+import UserLoginInfo from '@/components/UserLoginInfo';
 
 export default function Home() {
   const [userId, setUserId] = useState('');
@@ -39,13 +40,7 @@ export default function Home() {
         />
       );
     } else if (selectedFunction === 'UserGetLoginInfoRequest') {
-      return (
-        <ul>
-          {Object.entries(result).map(([key, value]) => (
-            <li key={key}>{key}: {value !== null ? String(value) : 'None'}</li>
-          ))}
-        </ul>
-      );
+      return <UserLoginInfo loginInfo={result} />;
     }
   };
 
@@ -55,7 +50,11 @@ export default function Home() {
       
       <form onSubmit={handleSubmit}>
         <label htmlFor="function">Select Function:</label>
-        <select id="function" value={selectedFunction} onChange={(e) => setSelectedFunction(e.target.value)}>
+        <select 
+          id="function" 
+          value={selectedFunction} 
+          onChange={(e) => setSelectedFunction(e.target.value)}
+        >
           <option value="UserBasicCallLogsGetListRequest">Call Logs</option>
           <option value="UserGetLoginInfoRequest">User Login Info</option>
         </select>
