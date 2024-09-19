@@ -8,10 +8,9 @@ export default function Home() {
   const [selectedFunction, setSelectedFunction] = useState('UserBasicCallLogsGetListRequest');
   const [result, setResult] = useState<any>(null);
 
-  // Reset result and userId when function changes
+  // Reset only the result when function changes
   useEffect(() => {
     setResult(null);
-    setUserId('');
   }, [selectedFunction]);
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -24,19 +23,31 @@ export default function Home() {
       apiUrl = `/api/user-login-info?function=${selectedFunction}&user_id=${userId}`;
     }
 
-    const res = await fetch(apiUrl);
-    const data = await res.json();
-    setResult(data);
+    try {
+      const res = await fetch(apiUrl);
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+      const data = await res.json();
+      setResult(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      setResult({ error: 'Failed to fetch data' });
+    }
   };
 
   const renderResult = () => {
     if (!result) return null;
 
+    if (result.error) {
+      return <div className="text-red-500">{result.error}</div>;
+    }
+
     if (selectedFunction === 'UserBasicCallLogsGetListRequest') {
       return (
         <CallLogs 
-          missedCalls={result.missed_calls} 
-          receivedCalls={result.received_calls} 
+          missedCalls={result.missed_calls || []} 
+          receivedCalls={result.received_calls || []} 
         />
       );
     } else if (selectedFunction === 'UserGetLoginInfoRequest') {
@@ -81,7 +92,7 @@ export default function Home() {
         </div>
       </form>
 
-      {result && renderResult()}
+      {renderResult()}
     </div>
   );
 }
