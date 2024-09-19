@@ -3,7 +3,6 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -47,10 +46,10 @@ export default function CallLogs({ missedCalls, receivedCalls }: CallLogsProps) 
   );
 
   return (
-    <div className="container mx-auto max-w-4xl p-4">
+    <>
       <h2 className="text-2xl font-bold mb-4 text-center">Call Logs</h2>
       {renderCallTable(missedCalls, "Missed Calls")}
       {renderCallTable(receivedCalls, "Received Calls")}
-    </div>
+    </>
   );
 }
