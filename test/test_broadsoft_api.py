@@ -25,6 +25,32 @@ for attr in dir(response):
            print(f"{attr}: None")
 
 
+#Function:UserGetListInGroupRequest
+# Response attributes:
+# session_id: a5972674-f950-4673-b61e-b6e310e00fde
+
+# type_: UserGetListInGroupResponse
+
+# user_table: [userTable(user_id='Oberlin_High_2101', last_name='James', first_name='Yvonne', department=None, phone_number=None, phone_number_activated=None, email_address=None, hiragana_last_name='James', hiragana_first_name='Yvonne', in_trunk_group='false', extension='201', country_code=None, national_prefix=None), userTable(user_id='Oberlin_High_2103', last_name='Johnson', first_name='Geraldine', department=None, phone_number=None, phone_number_activated=None, email_address=None, hiragana_last_name='Johnson', hiragana_first_name='Geraldine', in_trunk_group='false', extension='203', country_code=None, national_prefix=None), userTable(user_id='Oberlin_High_2114', last_name='Smith', first_name='Mr', department=None, phone_number=None, phone_number_activated=None, email_address=None, hiragana_last_name='Smith', hiragana_first_name='Mr', in_trunk_group='false', extension='214', country_code=None, national_prefix=None), userTable(user_id='Oberlin_High_2102', last_name='Ivey', first_name='Mrs', department=None, phone_number=None, phone_number_activated=None, email_address=None, hiragana_last_name='Ivey', hiragana_first_name='Mrs', in_trunk_group='false', extension='202', country_code=None, national_prefix=None), userTable(user_id='Oberlin_High_2104', last_name='Williams', first_name='Mrs', department=None, phone_number=None, phone_number_activated=None, email_address=None, hiragana_last_name='Williams', hiragana_first_name='Mrs', in_trunk_group='false', extension='204', country_code=None, national_prefix=None), userTable(user_id='Oberlin_High_2105', last_name='Bedword', first_name='Shaunakay', department=None, phone_number=None, phone_number_activated=None, email_address=None, hiragana_last_name='Bedword', hiragana_first_name='Shaunakay', in_trunk_group='false', extension='205', country_code=None, national_prefix=None), userTable(user_id='Oberlin_High_2106', last_name='Gray', first_name='Ms', department=None, phone_number=None, phone_number_activated=None, email_address=None, hiragana_last_name='Gray', hiragana_first_name='Ms', in_trunk_group='false', extension='206', country_code=None, national_prefix=None), userTable(user_id='Oberlin_High_2107', last_name='Bryant', first_name='Sybil', department=None, phone_number=None, phone_number_activated=None, email_address=None, hiragana_last_name='Bryant', hiragana_first_name='Sybil', in_trunk_group='false', extension='207', country_code=None, national_prefix=None), userTable(user_id='Oberlin_High_2108', last_name='Station', first_name='Nurse', department=None, phone_number=None, phone_number_activated=None, email_address=None, hiragana_last_name='Station', hiragana_first_name='Nurse', in_trunk_group='false', extension='208', country_code=None, national_prefix=None), userTable(user_id='Oberlin_High_2109', last_name='Walker', first_name='Mr. E', department=None, phone_number=None, phone_number_activated=None, email_address=None, hiragana_last_name='Walker', hiragana_first_name='Mr. E', in_trunk_group='false', extension='209', country_code=None, national_prefix=None), userTable(user_id='Oberlin_High_2110', last_name='Office', first_name='Security', department=None, phone_number=None, phone_number_activated=None, email_address=None, hiragana_last_name='Office', hiragana_first_name='Security', in_trunk_group='false', extension='210', country_code=None, national_prefix=None), userTable(user_id='Oberlin_High_2111', last_name='Spencer', first_name='Michelle', department=None, phone_number=None, phone_number_activated=None, email_address=None, hiragana_last_name='Spencer', hiragana_first_name='Michelle', in_trunk_group='false', extension='211', country_code=None, national_prefix=None), userTable(user_id='Oberlin_High_2112', last_name='Hunter', first_name='Ferron', department=None, phone_number=None, phone_number_activated=None, email_address=None, hiragana_last_name='Hunter', hiragana_first_name='Ferron', in_trunk_group='false', extension='212', country_code=None, national_prefix=None), userTable(user_id='Oberlin_High_2113', last_name='Office', first_name='Guidance', department=None, phone_number=None, phone_number_activated=None, email_address=None, hiragana_last_name='Office', hiragana_first_name='Guidance', in_trunk_group='false', extension='213', country_code=None, national_prefix=None), userTable(user_id='Oberlin_High_2115', last_name='Staffroom', first_name='Main', department=None, phone_number=None, phone_number_activated=None, email_address=None, hiragana_last_name='Staffroom', hiragana_first_name='Main', in_trunk_group='false', extension='215', country_code=None, national_prefix=None), userTable(user_id='Oberlin_High_2116', last_name='Office', first_name='Dean', department=None, phone_number=None, phone_number_activated=None, email_address=None, hiragana_last_name='Office', hiragana_first_name='Dean', in_trunk_group='false', extension='216', country_code=None, national_prefix=None), userTable(user_id='Oberlin_High_2117', last_name='Area', first_name='Canteen', department=None, phone_number=None, phone_number_activated=None, email_address=None, hiragana_last_name='Area', hiragana_first_name='Canteen', in_trunk_group='false', extension='217', country_code=None, national_prefix=None)]
+
+
+# Function:UserDevicePoliciesGetResponse21
+# enable_acd: False
+# enable_call_decline: False
+# enable_call_forwarding_always: False
+# enable_call_forwarding_busy: False
+# enable_call_forwarding_no_answer: False
+# enable_call_recording: False
+# enable_device_feature_synchronization: True
+# enable_dnd: False
+# enable_executive: False
+# enable_executive_assistant: False
+# enable_security_classification: False
+# line_mode: Single User Private and Shared
+# session_id: 0d32e6af-c425-4744-ae76-245b2dc177ca
+# type_: UserDevicePoliciesGetResponse21
+
+
 # [root@coe-voip Broadsoft]# python test_broadsoft_api.py
 # Response attributes:
 # encoding: ISO-8859-1
